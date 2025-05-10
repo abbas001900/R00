@@ -56,4 +56,4 @@ echo "🔢 Nombre de tentatives : $nbreTentative"
 echo "😉 Merci d’avoir joué ! À bientôt."
 echo
 
-exit 0    # Marque la fin normale du script
+exit 0    # Cette commande Marque la fin normale du script
