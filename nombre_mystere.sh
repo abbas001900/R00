@@ -30,27 +30,30 @@ aleatoire=$(( RANDOM % limitsup + 1 ))    # Génère un nombre aléatoire entre 
 # Boucle principale du jeu
 #-------------------------------
 # Tant que le joueur ne trouve pas le bon nombre
-while [ "$nombre" -ne "$aleatoire" ]; do  # Début de la boucle s'effectuera tant que le nombre entré n'est pas égale au nombre mystère
-  read -p "Devinez :" nombre              # Invite le joueur à entrer un nombre et récupère la saisie utilisateur
+while [ "$nombre" -ne "$aleatoire" ]; do  # Début de la boucle  qui s'effectuera tant que le nombre entré n'est pas égale au nombre mystère
+  read -p "Devinez : " nombre              # Invite le joueur à entrer un nombre et récupère la saisie utilisateur
 
   # Compare la saisie avec le nombre à deviner
   if [ "$nombre" -lt "$aleatoire" ]; then # Si le nombre entré par le joueur est plus petit que le nombre mystère
     echo "... c'est plus grand !"
+    echo
   elif [ "$nombre" -gt "$aleatoire" ]; then # Si le nombre entré par le joueur est plus grand que le nombre mystère
     echo "... c'est plus petit !"
+    echo
   fi # Fin de la condition
 
   # Incrémente de 1 le nombre de tentatives après chaque essai
   nbreTentative=$((nbreTentative + 1))
+
 done # Fin de la boucle
 
 #-----------------------------------
 # Fin du jeu : le joueur a trouvé
 #-----------------------------------
 echo
-echo "🎉 Bravo !! Vous avez deviné le nombre mystère : $aleatoire"
+echo "🏆🎉🥳 Bravo !! Vous avez deviné le nombre mystère : $aleatoire"
 echo "🔢 Nombre de tentatives : $nbreTentative"
-echo "Merci d’avoir joué ! À bientôt."
+echo "😉 Merci d’avoir joué ! À bientôt."
 echo
 
 exit 0    # Marque la fin normale du script
